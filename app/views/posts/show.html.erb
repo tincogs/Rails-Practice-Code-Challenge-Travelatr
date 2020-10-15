@@ -1,0 +1,9 @@
+<h1><%= @post.title%></h1>
+<h2><%= link_to @post.blogger.name, blogger_path(@post.blogger) %></h2>
+<h2><%= link_to @post.destination.name, destination_path(@post.destination) %></h2>
+<p><%= @post.content %></p>
+<p><%= @post.likes %>
+ <%= form_for @post do |t| %>
+     <%= t.hidden_field :likes, :value => @post.likes + 1 %>
+     <%= t.submit "SMASH LIKE" %>
+   <% end %>

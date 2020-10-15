@@ -1,0 +1,10 @@
+<h1><%= @destination.name + " " + @destination.country %></h1>
+
+<ul>
+    <%  @destination.posts.last(5).reverse.each do |p| %>
+    <li><%= link_to p.title, post_path(p)%></li>
+    <%end%>
+</ul>
+
+<p><%= "Featured Post: #{@destination.most_liked}" %></p>
+<p><%= "Average Blogger Age: #{@destination.avg_age}" %></p>

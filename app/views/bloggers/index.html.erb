@@ -1,0 +1,4 @@
+<h1> Blogger Index </h1>
+<% @bloggers.each do |b| %>
+<%= link_to b.name, blogger_path(b) %><br>
+<%end%>
